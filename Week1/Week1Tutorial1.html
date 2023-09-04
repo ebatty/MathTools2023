@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Tutorial 1 &#8212; Mathematical Tools for Neuroscientists</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,60 +61,88 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week1/Week1Tutorial1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tutorial 2" href="Week1Tutorial2.html" />
     <link rel="prev" title="Video 1.3: Vector spaces" href="Video13.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Mathematical Tools for Neuroscientists</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mathematical Tools for Neuroscientists</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,910 +151,265 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Linear Algebra &amp; Dynamical Systems
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra &amp; Dynamical Systems</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Overview.html">
-   Week 1: Vectors
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="KeyConcepts.html">
-     Key concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Video11.html">
-     Video 1.1: What is a vector?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Video12.html">
-     Video 1.2: Vector properties &amp; operations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Video13.html">
-     Video 1.3: Vector spaces
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Week1Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week2/Overview.html">
-   Week 2: Matrices
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/KeyConcepts.html">
-     Key concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Video21.html">
-     Video 2.1: Linear transformations and matrices (3Blue1Brown)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Video22.html">
-     Video 2.2: Matrix multiplication as composition(3Blue1Brown)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Video23.html">
-     Video 2.3: The determinant (3Blue1Brown)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Video24.html">
-     Video 2.4: Inverse matrices, column space, and null space (3Blue1Brown)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Video25.html">
-     Video 2.5: Nonsquare matrices as transformations between dimensions (3Blue1Brown)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Week2Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week2/Week2Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week3/Overview.html">
-   Week 3: Discrete Dynamics &amp; Eigenstuff
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/KeyConcepts.html">
-     Key concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/Video31.html">
-     Video 3.1: Intro to Dynamical Systems
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/Video32.html">
-     Video 3.2: Discrete Dynamical Neural Circuit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/Video33.html">
-     Video 3.3: Eigenvalues and eigenvectors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/Week3Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/Week3Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week4/Overview.html">
-   Week 4: Continuous Dynamical Systems &amp; Differential Equations
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week4/KeyConcepts.html">
-     Key Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week4/Video41.html">
-     Video 4.1: Eigenvalues &amp; Discrete Dynamical Systems
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week4/Video42.html">
-     Video 4.2: Review of Differentiation &amp; Integration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week4/Video43.html">
-     Video 4.3: Solving differential equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week4/Video44.html">
-     Video 4.4: Systems of differential equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week4/Week4Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week4/Week4Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week5/Overview.html">
-   Week 5: Matrix Decomposition &amp; Dimensionality Reduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week5/Video51.html">
-     Video 5.1: Special Matrices
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week5/Video52.html">
-     Video 5.2: Matrix Decomposition &amp; SVD
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week5/Video53.html">
-     Video 5.3: PCA
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week5/Week5Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week5/Week5Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../LinearAlgebraReview/Overview.html">
-   Review
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../LinearAlgebraReview/MathTools_Homework1.html">
-     Homework 1
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Overview.html">Week 1: Vectors</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="KeyConcepts.html">Key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Video11.html">Video 1.1: What is a vector?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Video12.html">Video 1.2: Vector properties &amp; operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Video13.html">Video 1.3: Vector spaces</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tutorial 1</a></li>
+
+
+
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Probability &amp; Statistics
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week6/Overview.html">
-   Week 6: Intro to Probability
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week6/KeyConcepts.html">
-     Key Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week6/Reading61.html">
-     Reading 6.1: Intro to Probability
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week6/Week6Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week7/Overview.html">
-   Week 7: Intro to Statistics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week7/Video71.html">
-     Video 7.1: Descriptive Statistics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week7/Video72.html">
-     Video 7.2: Overview of Statistical Inference
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week7/Video73.html">
-     Video 7.3: Point Estimators Examples &amp; Goodness
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week7/Video74.html">
-     Video 7.4: Maximum Likelihood Estimation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week7/Video75.html">
-     Video 7.5: Bayesian Inference
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week7/Week7Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week7/Week7Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week8/Overview.html">
-   Week 8: Statistical Encoding &amp; Decoding
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week8/Video81.html">
-     Video 8.1: What are encoding &amp; decoding?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week8/Video82.html">
-     Video 8.2: Statistical encoding models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week8/Week8Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week8/Week8Tutorial2.html">
-     (Optional) Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Machine Learning
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week9/Overview.html">
-   Week 9: Linear Regression
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week9/Video91.html">
-     Video 9.1: What is machine learning?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week9/Video92.html">
-     Video 9.2: Types of machine learning
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week9/Video93.html">
-     Video 9.3: Linear regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week9/Week9Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week10/Overview.html">
-   Week 10: Model Selection
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week10/KeyConcepts.html">
-     Key concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week10/Video101.html">
-     Video 10.1: Model evaluation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week10/Video102.html">
-     Video 10.2: Bootstrapping (NMA)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week10/Video103.html">
-     Video 10.3: Model selection
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week10/Week10Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week10/Week10Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week11/Overview.html">
-   Week 11: Clustering &amp; Classification
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week11/Video111.html">
-     Video 11.1: Clustering Applications
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week11/Video112.html">
-     Video 11.2: Types of Clustering Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week11/Video113.html">
-     Video 11.3: K-Means Clustering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week11/Week11Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week11/Week11Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Week12/Overview.html">
-   Week 12: Deep Learning
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week12/Video121.html">
-     Video 12.1: Feedforward networks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week12/Video122.html">
-     Video 12.2: Training Neural Networks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week12/Video123.html">
-     Video 12.3: Practical steps for training
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week12/Video124.html">
-     Reaching 12.4: Intro to Pytorch
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week12/Week12Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/ebatty/MathToolsforNeuroscience/blob/jupyterbook/Week1/Week1Tutorial1.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ebatty/MathToolsforNeuroscience/blob/jupyterbook/Week1/Week1Tutorial1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Week1/Week1Tutorial1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Week1/Week1Tutorial1.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Tutorial 1
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hidden-functions">
-     Hidden functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coding-tips">
-   Coding tips
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1-vector-addition-scalar-multiplication">
-   Exercise 1: Vector addition &amp; scalar multiplication
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2-dot-product-geometrical-properties">
-   Exercise 2: Dot product geometrical properties
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-interactive-demo">
-     A) Interactive demo
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-optional-proof-of-relationship">
-     B) (Optional) Proof of relationship
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#c-resulting-properties-of-the-dot-product">
-     C) Resulting properties of the dot product
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-3-optimal-stimuli-for-a-neuron">
-   Exercise 3: Optimal stimuli for a neuron
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-coding-the-neuron">
-     A) Coding the neuron
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-experimentation">
-     B) Experimentation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#c-computing-optimal-stimuli">
-     C) Computing optimal stimuli
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-4-correlation-coefficient">
-   Exercise 4: Correlation coefficient
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-derivation">
-     A) Derivation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-verification-with-code">
-     B) Verification with code
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial 1</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Tutorial 1
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hidden-functions">
-     Hidden functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coding-tips">
-   Coding tips
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1-vector-addition-scalar-multiplication">
-   Exercise 1: Vector addition &amp; scalar multiplication
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2-dot-product-geometrical-properties">
-   Exercise 2: Dot product geometrical properties
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-interactive-demo">
-     A) Interactive demo
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-optional-proof-of-relationship">
-     B) (Optional) Proof of relationship
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#c-resulting-properties-of-the-dot-product">
-     C) Resulting properties of the dot product
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-3-optimal-stimuli-for-a-neuron">
-   Exercise 3: Optimal stimuli for a neuron
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-coding-the-neuron">
-     A) Coding the neuron
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-experimentation">
-     B) Experimentation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#c-computing-optimal-stimuli">
-     C) Computing optimal stimuli
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-4-correlation-coefficient">
-   Exercise 4: Correlation coefficient
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-derivation">
-     A) Derivation
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-verification-with-code">
-     B) Verification with code
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-functions">Hidden functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-tips">Coding tips</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-vector-addition-scalar-multiplication">Exercise 1: Vector addition &amp; scalar multiplication</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-figuring-out-a-basis">Exercise 2: Figuring out a basis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-determing-dependence">Exercise 3: Determing dependence</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-linear-independence-vs-dependence">A) Linear independence vs dependence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-orthogonal-vectors">B) Orthogonal vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-span">C) Span</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-basis">D) Basis</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-dot-product-geometrical-properties">Exercise 2: Dot product geometrical properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-interactive-demo">A) Interactive demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-optional-proof-of-relationship">B) (Optional) Proof of relationship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-resulting-properties-of-the-dot-product">C) Resulting properties of the dot product</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-optimal-stimuli-for-a-neuron">Exercise 3: Optimal stimuli for a neuron</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-coding-the-neuron">A) Coding the neuron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-experimentation">B) Experimentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-computing-optimal-stimuli">C) Computing optimal stimuli</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <p><a href="https://colab.research.google.com/github/ebatty/MathToolsforNeuroscience/blob/jupyterbook/Week1/Week1Tutorial1.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/ebatty/MathTools2023/blob/jupyterbook/Week1/Week1Tutorial1.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tutorial-1">
-<h1>Tutorial 1<a class="headerlink" href="#tutorial-1" title="Permalink to this headline">#</a></h1>
+<h1>Tutorial 1<a class="headerlink" href="#tutorial-1" title="Permalink to this heading">#</a></h1>
 <p><strong>Linear Algebra I, Vectors</strong></p>
 <p><strong>[insert your name]</strong></p>
 <p><strong>Important reminders</strong>: Before starting, click “File -&gt; Save a copy in Drive”. Produce a pdf for submission by “File -&gt; Print” and then choose “Save to PDF”.</p>
-<p>To complete this tutorial, you should have watched Video 1.1: Vectors and Video 1.2: Vector operations.</p>
+<p>To complete this tutorial, you should have watched Video 1.1: Vectors and Video 1.2: Vector operations, and Video 1.3: Linear combinations, span, and basis vectors</p>
 <p><strong>Learning objectives</strong></p>
 <ul class="simple">
 <li><p>Review and use vector properties and operations such as vector length, scalar multiplication, and vector addition</p></li>
@@ -1025,90 +419,110 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Imports
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib
-import ipywidgets as widgets   
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 
-# Plotting parameters
-matplotlib.rcParams.update({&#39;font.size&#39;: 22})
+<span class="c1"># Plotting parameters</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Plotting parameters</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <section id="hidden-functions">
-<h2>Hidden functions<a class="headerlink" href="#hidden-functions" title="Permalink to this headline">#</a></h2>
+<h2>Hidden functions<a class="headerlink" href="#hidden-functions" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># @title Hidden functions
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Hidden functions</span>
 
-def generate_unit_vec(dim=4):
-  &quot;&quot;&quot;Generate random unit vector with only positive values. Please note that this
-  is not at all a principled correct way of doing this (not truly random)
+<span class="k">def</span> <span class="nf">generate_unit_vec</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Generate random unit vector with only positive values. Please note that this</span>
+<span class="sd">  is not at all a principled correct way of doing this (not truly random)</span>
 
-  Args:
-    dim (scalar): dimension of the unit vector
-  
-  &quot;&quot;&quot; 
-  vec = -1* np.ones(dim,)
-  while np.any(vec&lt;0):
-    vec = np.random.randn(4,)
-  unit_vec = vec/np.linalg.norm(vec)
-  return unit_vec
+<span class="sd">  Args:</span>
+<span class="sd">    dim (scalar): dimension of the unit vector</span>
 
-def plot_responses_vs_angles(responses, angles):
-  &quot;&quot;&quot; Plot neural responses as a function of the angle between the pixel vector 
-  and weight vector.
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">vec</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dim</span><span class="p">,)</span>
+  <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">vec</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,)</span>
+  <span class="n">unit_vec</span> <span class="o">=</span> <span class="n">vec</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">unit_vec</span>
 
-  Args:
-    responses (ndarray): the responses of the neuron to each image (n_images x 1)
-    angles (ndarray): the corresponding angle of each image to the weight vector (n_images x 1)
+<span class="k">def</span> <span class="nf">plot_responses_vs_angles</span><span class="p">(</span><span class="n">responses</span><span class="p">,</span> <span class="n">angles</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot; Plot neural responses as a function of the angle between the pixel vector</span>
+<span class="sd">  and weight vector.</span>
 
-  &quot;&quot;&quot;
+<span class="sd">  Args:</span>
+<span class="sd">    responses (ndarray): the responses of the neuron to each image (n_images x 1)</span>
+<span class="sd">    angles (ndarray): the corresponding angle of each image to the weight vector (n_images x 1)</span>
 
-  fig, ax = plt.subplots(1, 1, figsize=(10,10))
-  ax.plot(angles, responses, &#39;o&#39;, color = &#39;#0DD3C4&#39;)
-  ax.set(xlabel=&#39;Angle (degrees)&#39;, ylabel=&#39;Neural response&#39;)
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">responses</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#0DD3C4&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Angle (degrees)&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Neural response&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="coding-tips">
-<h1>Coding tips<a class="headerlink" href="#coding-tips" title="Permalink to this headline">#</a></h1>
+<h1>Coding tips<a class="headerlink" href="#coding-tips" title="Permalink to this heading">#</a></h1>
 <p>We will mostly use numpy in this course, especially for the linear algebra section. We can use 1D numpy arrays for vectors: for example we could write <span class="math notranslate nohighlight">\(\bar{x}\)</span> = [4, 5] as <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">np.array([4,</span> <span class="pre">5])</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Defining vectors
-x = np.array([4, 5])
-y = np.array([1, 2])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defining vectors</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 
-# Length of a vector
-length_of_x = np.linalg.norm(x)
+<span class="c1"># Length of a vector</span>
+<span class="n">length_of_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-# Scalar multiplication
-scalar_multiplied_x = 5*x
+<span class="c1"># Scalar multiplication</span>
+<span class="n">scalar_multiplied_x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span>
 
-# Vector addition
-summed_vectors = x + y
+<span class="c1"># Vector addition</span>
+<span class="n">summed_vectors</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-# Dot product
-dot_prod = np.dot(x, y)
+<span class="c1"># Dot product</span>
+<span class="n">dot_prod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-vector-addition-scalar-multiplication">
-<h1>Exercise 1: Vector addition &amp; scalar multiplication<a class="headerlink" href="#exercise-1-vector-addition-scalar-multiplication" title="Permalink to this headline">#</a></h1>
+<h1>Exercise 1: Vector addition &amp; scalar multiplication<a class="headerlink" href="#exercise-1-vector-addition-scalar-multiplication" title="Permalink to this heading">#</a></h1>
 <p>In the following demo, we will demonstrate a <strong>linear combination</strong> of two vectors, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> (where we multiply each vector by a scalar value and multiply):</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{z} = a\mathbf{x} + b\mathbf{y}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> are vectors, while <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are scalars. Specifically, <span class="math notranslate nohighlight">\(\mathbf{x} = \begin{bmatrix}3 \\ 1 \\\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y} = \begin{bmatrix}-1 \\ 2 \\\end{bmatrix}\)</span>.</p>
 <p>You will play with the scalar multiples <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> to visualize both scalar multiplication and vector addition. Think and talk through the following questions:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>How does <span class="math notranslate nohighlight">\(a\mathbf{x}\)</span> compare to <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> when <span class="math notranslate nohighlight">\(a\)</span> is negative?</p></li>
 <li><p>How does <span class="math notranslate nohighlight">\(a\mathbf{x}\)</span> compare to <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> when <span class="math notranslate nohighlight">\(a\)</span> is a fraction?</p></li>
 <li><p>Can you get <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> to point to anywhere in the 2D space with combinations of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>?</p></li>
@@ -1117,107 +531,216 @@ dot_prod = np.dot(x, y)
 <p><em>YOUR ANSWERS HERE</em></p>
 <p>Make sure you execute this cell to enable the widget! Move the sliders for “a” and “b”. After releasing the slider, be patient for a couple of seconds to see the desired change.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#@markdown Make sure you execute this cell to enable the widget! Move the sliders for “a” and “b”. After releasing the slider, be patient for a couple of seconds to see the desired change.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@markdown Make sure you execute this cell to enable the widget! Move the sliders for “a” and “b”. After releasing the slider, be patient for a couple of seconds to see the desired change.</span>
 
 
-def plot_arrows(x, y, a_times_x, b_times_y):
-  fig, ax = plt.subplots(figsize=(10, 7))
+<span class="k">def</span> <span class="nf">plot_arrows</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a_times_x</span><span class="p">,</span> <span class="n">b_times_y</span><span class="p">):</span>
+  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 
-  ax.spines[&#39;top&#39;].set_color(&#39;none&#39;)
-  ax.spines[&#39;bottom&#39;].set_position(&#39;zero&#39;)
-  ax.spines[&#39;left&#39;].set_position(&#39;zero&#39;)
-  ax.spines[&#39;right&#39;].set_color(&#39;none&#39;)
+  <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 
-  ax.set_aspect(&#39;equal&#39;, adjustable=&#39;box&#39;)
-  ax.set(xlim = [-10, 10], ylim = [-10, 10], xticks = np.arange(-10, 10), yticks = np.arange(-10, 10), xticklabels = [], yticklabels = [])
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">xticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">yticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">xticklabels</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">yticklabels</span> <span class="o">=</span> <span class="p">[])</span>
 
-  ax.grid(alpha=.4)
+  <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.4</span><span class="p">)</span>
 
-  z = a_times_x + b_times_y
-  z_arr = ax.arrow(0, 0, z[0], z[1], width=.08, color=&#39;k&#39;, length_includes_head = True);
+  <span class="n">z</span> <span class="o">=</span> <span class="n">a_times_x</span> <span class="o">+</span> <span class="n">b_times_y</span>
+  <span class="n">z_arr</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">.08</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">length_includes_head</span> <span class="o">=</span> <span class="kc">True</span><span class="p">);</span>
 
-  x_orig, = ax.plot([0, x[0]], [0, x[1]], &#39;--&#39;, color=&#39;#648FFF&#39;)
-  y_orig, = ax.plot([0, y[0]], [0, y[1]], &#39;--&#39;,  color=&#39;#DC267F&#39;)
+  <span class="n">x_orig</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#648FFF&#39;</span><span class="p">)</span>
+  <span class="n">y_orig</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#DC267F&#39;</span><span class="p">)</span>
 
-  ax_arr = ax.arrow(0, 0, a_times_x[0], a_times_x[1], width=.08, color=&#39;#648FFF&#39;, length_includes_head = True);
-  by_arr = ax.arrow(0, 0, b_times_y[0], b_times_y[1], width=.08, color=&#39;#DC267F&#39;, length_includes_head = True);
+  <span class="n">ax_arr</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a_times_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a_times_x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">.08</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#648FFF&#39;</span><span class="p">,</span> <span class="n">length_includes_head</span> <span class="o">=</span> <span class="kc">True</span><span class="p">);</span>
+  <span class="n">by_arr</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b_times_y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b_times_y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">.08</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#DC267F&#39;</span><span class="p">,</span> <span class="n">length_includes_head</span> <span class="o">=</span> <span class="kc">True</span><span class="p">);</span>
 
-  ax.plot([a_times_x[0], z[0]], [a_times_x[1], z[1]], &#39;--k&#39;)
-  ax.plot([b_times_y[0], z[0]], [b_times_y[1], z[1]], &#39;--k&#39;)
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">a_times_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">a_times_x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;--k&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">b_times_y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">b_times_y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="s1">&#39;--k&#39;</span><span class="p">)</span>
 
 
-  leg = ax.legend([x_orig, y_orig, ax_arr, by_arr, z_arr], [r&quot;$\mathbf{x}$&quot;, r&quot;$\mathbf{y}$&quot;, r&quot;$a\mathbf{x}$&quot;, r&quot;$b\mathbf{y}$&quot;, r&quot;$\mathbf{z} = a\mathbf{x} + b\mathbf{y}$&quot;], handlelength = 2, fontsize = 25, loc = &#39;center left&#39;, bbox_to_anchor=(1.05, .5))
-  for handle, label in zip(leg.legendHandles, leg.texts):
-      try:
-          label.set_color(handle.get_facecolor())
-      except:
-          label.set_color(handle.get_color())
-      #handle.set_visible(False)
+  <span class="n">leg</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">x_orig</span><span class="p">,</span> <span class="n">y_orig</span><span class="p">,</span> <span class="n">ax_arr</span><span class="p">,</span> <span class="n">by_arr</span><span class="p">,</span> <span class="n">z_arr</span><span class="p">],</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{x}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{y}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$a\mathbf</span><span class="si">{x}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$b\mathbf</span><span class="si">{y}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{z}</span><span class="s2"> = a\mathbf</span><span class="si">{x}</span><span class="s2"> + b\mathbf</span><span class="si">{y}</span><span class="s2">$&quot;</span><span class="p">],</span> <span class="n">handlelength</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">.5</span><span class="p">))</span>
+  <span class="k">for</span> <span class="n">handle</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">leg</span><span class="o">.</span><span class="n">legendHandles</span><span class="p">,</span> <span class="n">leg</span><span class="o">.</span><span class="n">texts</span><span class="p">):</span>
+      <span class="k">try</span><span class="p">:</span>
+          <span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">handle</span><span class="o">.</span><span class="n">get_facecolor</span><span class="p">())</span>
+      <span class="k">except</span><span class="p">:</span>
+          <span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">handle</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+      <span class="c1">#handle.set_visible(False)</span>
 
-@widgets.interact(a = widgets.FloatSlider(value=1.0, min=-2, max=2, step=0.1), b = widgets.FloatSlider(value=1.0, min=-2, max=2, step=0.1))
-def plot_linear_combination(a, b):
-  x = np.array([3, 1])
-  y = np.array([-1, 2])
+<span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">b</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">plot_linear_combination</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 
-  plot_arrows(x, y, a*x, b*y)
+  <span class="n">plot_arrows</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d54c6da6d7514a818a567c205560081d"}
-</script></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">38</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>           <span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">handle</span><span class="o">.</span><span class="n">get_color</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>       <span class="c1">#handle.set_visible(False)</span>
+<span class="ne">---&gt; </span><span class="mi">38</span> <span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">b</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">def</span> <span class="nf">plot_linear_combination</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>   <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>   <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;widgets&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercise-2-dot-product-geometrical-properties">
-<h1>Exercise 2: Dot product geometrical properties<a class="headerlink" href="#exercise-2-dot-product-geometrical-properties" title="Permalink to this headline">#</a></h1>
-<p>In this exercise, we will explore and prove the relationship between the dot product of two vectors and the angle between them.</p>
-<section id="a-interactive-demo">
-<h2>A) Interactive demo<a class="headerlink" href="#a-interactive-demo" title="Permalink to this headline">#</a></h2>
-<p>First, use the following interactive demo to change the dot product of two vectors and see what happens to them (under the constraint that each vector stays the same length).</p>
-<section id="id1">
-<h3><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>Make sure you execute this cell to enable the widget!</p>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-2-figuring-out-a-basis">
+<h1>Exercise 2: Figuring out a basis<a class="headerlink" href="#exercise-2-figuring-out-a-basis" title="Permalink to this heading">#</a></h1>
+<p>Let’s say we are looking at the firing rates of 3 neurons. We can represent their activity in a 3D plot, as below. It turns out that due to their tightly-linked interactions, they always fire in such a way that the point in 3D space falls along a 2D plane (that passes through the origin). Basically, every single data point we record of the firing rates of the 3 neurons falls on that plane. This is represented by the blue plane in the figure below. This 2D plane is a subspace of all of 3-D space (R3).</p>
+<p>A) How many basis vectors would you need for the 2D plane? How many components would each basic vector have?</p>
+<p>B) How many numbers would you need to be able to fully describe the state of the 3 neuron population at a given time?</p>
+<p><em>YOUR ANSWER HERE</em></p>
+<p>Execute this cell to see figure</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#@title
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @markdown Execute this cell to see figure</span>
 
-#@markdown Make sure you execute this cell to enable the widget!
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
-def solve_equations(dot_prod, x = [4, 1], norm_x = np.sqrt(17), norm_y = 3):
-  i = 0 if dot_prod &lt; 0 else 1
-  y1 = np.roots([17, -8*dot_prod, dot_prod**2-9])[i]
-  y2 = dot_prod - 4*y1
-  y = [y1, y2]
-  return y
+<span class="c1"># add axes</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 
-def plot_arrows(x, y):
-  fig, ax = plt.subplots(figsize=(7, 7))
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mf">.7</span><span class="o">*</span><span class="n">xx</span> <span class="o">+</span> <span class="o">-</span><span class="mf">.2</span><span class="o">*</span><span class="n">yy</span>
 
-  ax.axhline(linewidth=1, color=&#39;k&#39;) #adds thick red line @ y=0
-  ax.axvline(linewidth=1, color=&#39;k&#39;) 
-  #ax.grid()
-  ax.set_xlim([-6, 6])
-  ax.set_ylim([-6, 6])
-  ax.axis(&#39;Off&#39;)
+<span class="c1"># plot the plane</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
-
-  ax.arrow(0, 0, x[0], x[1], width=.08, color=&#39;#01DFD7&#39;);
-  ax.arrow(0, 0, y[0], y[1], width=.08, color=&#39;#0080FF&#39;);
-
-
-@widgets.interact(dot_prod=widgets.FloatSlider(value=1.0, min=-12.3, max=12.3, step=0.1))
-def plot_data_estimate(dot_prod):
-  y = solve_equations(dot_prod)
-  plot_arrows([4, 1], y)
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">zlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;Neuron 1 Firing Rate&#39;</span><span class="p">,</span>  <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Neuron 2 Firing Rate&#39;</span><span class="p">,</span> <span class="n">zlabel</span> <span class="o">=</span> <span class="s1">&#39;Neuron 3 Firing Rate&#39;</span><span class="p">);</span>
+<span class="c1">#ax.invert_xaxis()</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e6917499eedd4fcfb75e86bc9bc654e2"}
-</script></div>
+<img alt="../_images/45a0332ec9585bf442468d2c99bd1de244baeba5d3c5419c4b8d129883c2cfc1.png" src="../_images/45a0332ec9585bf442468d2c99bd1de244baeba5d3c5419c4b8d129883c2cfc1.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-3-determing-dependence">
+<h1>Exercise 3: Determing dependence<a class="headerlink" href="#exercise-3-determing-dependence" title="Permalink to this heading">#</a></h1>
+<p>Let’s say we have four vectors:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \mathbf{a} = \begin{bmatrix}
+    4 \\ 2 \\ 0
+\end{bmatrix},  \mathbf{b} = \begin{bmatrix}
+    1 \\ 0 \\ 3,
+\end{bmatrix}, \mathbf{c} = \begin{bmatrix}
+    5 \\ 2 \\ 3
+\end{bmatrix}, \mathbf{d} = \begin{bmatrix}
+    3 \\ 3 \\ 2
+\end{bmatrix}\end{split}\]</div>
+<p>Check out this visualization prepared by Oğul Can Yurdakul to better see the vectors: https://www.geogebra.org/3d/hherq78z!</p>
+<section id="a-linear-independence-vs-dependence">
+<h2>A) Linear independence vs dependence<a class="headerlink" href="#a-linear-independence-vs-dependence" title="Permalink to this heading">#</a></h2>
+<p>Are these vectors linearly independent or dependent? Why?</p>
+<p><strong>Your text answer here</strong></p>
+</section>
+<section id="b-orthogonal-vectors">
+<h2>B) Orthogonal vectors<a class="headerlink" href="#b-orthogonal-vectors" title="Permalink to this heading">#</a></h2>
+<p>Are vectors <span class="math notranslate nohighlight">\(\bar{a}\)</span> and <span class="math notranslate nohighlight">\(\bar{b}\)</span> orthogonal? How do you know?</p>
+<p><strong>Your text answer here</strong></p>
+</section>
+<section id="c-span">
+<h2>C) Span<a class="headerlink" href="#c-span" title="Permalink to this heading">#</a></h2>
+<p>i) What is <span class="math notranslate nohighlight">\(Span\{\bar{a}, \bar{b}, \bar{c}, \bar{d}\}\)</span>?</p>
+<p>ii) What is <span class="math notranslate nohighlight">\(Span\{\bar{a}, \bar{b}, \bar{c}\}\)</span>?</p>
+<p>iii) What is <span class="math notranslate nohighlight">\(Span\{\bar{a}\}\)</span>?</p>
+<p><strong>Your text/math answer here</strong></p>
+</section>
+<section id="d-basis">
+<h2>D) Basis<a class="headerlink" href="#d-basis" title="Permalink to this heading">#</a></h2>
+<p>Can you make a basis for <span class="math notranslate nohighlight">\(R^3\)</span> based on the above vectors? What is it?</p>
+<p><strong>Your text answer here</strong></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-2-dot-product-geometrical-properties">
+<h1>Exercise 2: Dot product geometrical properties<a class="headerlink" href="#exercise-2-dot-product-geometrical-properties" title="Permalink to this heading">#</a></h1>
+<p>In this exercise, we will explore and prove the relationship between the dot product of two vectors and the angle between them.</p>
+<section id="a-interactive-demo">
+<h2>A) Interactive demo<a class="headerlink" href="#a-interactive-demo" title="Permalink to this heading">#</a></h2>
+<p>First, use the following interactive demo to change the dot product of two vectors and see what happens to them (under the constraint that each vector stays the same length).</p>
+<section id="id1">
+<h3><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Make sure you execute this cell to enable the widget!</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+
+<span class="c1">#@markdown Make sure you execute this cell to enable the widget!</span>
+
+<span class="k">def</span> <span class="nf">solve_equations</span><span class="p">(</span><span class="n">dot_prod</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">norm_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">17</span><span class="p">),</span> <span class="n">norm_y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">dot_prod</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span>
+  <span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">([</span><span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">dot_prod</span><span class="p">,</span> <span class="n">dot_prod</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">9</span><span class="p">])[</span><span class="n">i</span><span class="p">]</span>
+  <span class="n">y2</span> <span class="o">=</span> <span class="n">dot_prod</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">y1</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">plot_arrows</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+  <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1">#adds thick red line @ y=0</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="c1">#ax.grid()</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;Off&#39;</span><span class="p">)</span>
+
+
+  <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">.08</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#01DFD7&#39;</span><span class="p">);</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">.08</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#0080FF&#39;</span><span class="p">);</span>
+
+
+<span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">dot_prod</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mf">12.3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">12.3</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">plot_data_estimate</span><span class="p">(</span><span class="n">dot_prod</span><span class="p">):</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">solve_equations</span><span class="p">(</span><span class="n">dot_prod</span><span class="p">)</span>
+  <span class="n">plot_arrows</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">27</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>   <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">.08</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#01DFD7&#39;</span><span class="p">);</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>   <span class="n">ax</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mf">.08</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#0080FF&#39;</span><span class="p">);</span>
+<span class="ne">---&gt; </span><span class="mi">27</span> <span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">dot_prod</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mf">12.3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">12.3</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">def</span> <span class="nf">plot_data_estimate</span><span class="p">(</span><span class="n">dot_prod</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>   <span class="n">y</span> <span class="o">=</span> <span class="n">solve_equations</span><span class="p">(</span><span class="n">dot_prod</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>   <span class="n">plot_arrows</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;widgets&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>i) Does the angle between vectors increase or decrease as the dot product increases?</p>
 <p>ii) Does it seem like anything is special about a dot product of 0?</p>
@@ -1228,7 +751,7 @@ def plot_data_estimate(dot_prod):
 </section>
 </section>
 <section id="b-optional-proof-of-relationship">
-<h2>B) (Optional) Proof of relationship<a class="headerlink" href="#b-optional-proof-of-relationship" title="Permalink to this headline">#</a></h2>
+<h2>B) (Optional) Proof of relationship<a class="headerlink" href="#b-optional-proof-of-relationship" title="Permalink to this heading">#</a></h2>
 <p>We can work through a guided proof of this relationship - our first proof! Note that this is optional: move on and return to this if you have the time.</p>
 <p><img alt="picture" src="https://drive.google.com/uc?export=view&amp;id=1Lxj0dY_8CpgMhR_SSeRuQdO6-AYpwgj6" /></p>
 <p>i) Start by using the law of cosines to write out a formula for <span class="math notranslate nohighlight">\(||\bar{a}||^2\)</span></p>
@@ -1237,7 +760,7 @@ def plot_data_estimate(dot_prod):
 <p>iv) Equate the formulas for <span class="math notranslate nohighlight">\(||\bar{a}||^2\)</span> from i and iii and rearrange to solve for the dot product of <span class="math notranslate nohighlight">\(\bar{x}\)</span> and <span class="math notranslate nohighlight">\(\bar{y}\)</span>. You should get the equation above!</p>
 </section>
 <section id="c-resulting-properties-of-the-dot-product">
-<h2>C) Resulting properties of the dot product<a class="headerlink" href="#c-resulting-properties-of-the-dot-product" title="Permalink to this headline">#</a></h2>
+<h2>C) Resulting properties of the dot product<a class="headerlink" href="#c-resulting-properties-of-the-dot-product" title="Permalink to this heading">#</a></h2>
 <p>There are some key properties of the dot product that are easier to see now that we have the definition in terms of the angle between vectors:</p>
 <div class="math notranslate nohighlight">
 \[ \bar{x} \cdot \bar{y} =  ||\bar{x}|| ||\bar{y}|| cos(\theta) \]</div>
@@ -1248,30 +771,30 @@ def plot_data_estimate(dot_prod):
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-optimal-stimuli-for-a-neuron">
-<h1>Exercise 3: Optimal stimuli for a neuron<a class="headerlink" href="#exercise-3-optimal-stimuli-for-a-neuron" title="Permalink to this headline">#</a></h1>
+<h1>Exercise 3: Optimal stimuli for a neuron<a class="headerlink" href="#exercise-3-optimal-stimuli-for-a-neuron" title="Permalink to this heading">#</a></h1>
 <p>Let’s say that we are modeling the response of a retinal ganglion cell with a receptive field equal to 4 pixels. We are using a simple model in which the response of the neuron corresponds to the weighted sum of the pixel intensities of those 4 pixels. Specifically, the weight from pixel 1 is 2, the weight from pixel 2 is 4, the weight from pixel 3 is 1, and the weight from pixel 4 is 5.</p>
 <section id="a-coding-the-neuron">
-<h2>A) Coding the neuron<a class="headerlink" href="#a-coding-the-neuron" title="Permalink to this headline">#</a></h2>
+<h2>A) Coding the neuron<a class="headerlink" href="#a-coding-the-neuron" title="Permalink to this heading">#</a></h2>
 <p>Complete the function below to compute the response of the model neuron described above given pixel intensities <span class="math notranslate nohighlight">\(P_1\)</span> through <span class="math notranslate nohighlight">\(P_4\)</span>. Use the dot product function <code class="docutils literal notranslate"><span class="pre">np.dot</span></code>. Fill in all <code class="docutils literal notranslate"><span class="pre">...</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def compute_response(weights, pixels):
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_response</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">pixels</span><span class="p">):</span>
 
-  r = ... # compute the response
+  <span class="n">r</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># compute the response</span>
 
-  return 
+  <span class="k">return</span>
 
-# Example pixel values
-p1 = 3
-p2 = 2
-p3 = 1
-p4 = 3
+<span class="c1"># Example pixel values</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="mi">3</span>
 
-weights = ... # set the weights of the neuron
-response = compute_response(weights, ...)
+<span class="n">weights</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># set the weights of the neuron</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">compute_response</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
-# Uncomment below when done
-# print(response)
+<span class="c1"># Uncomment below when done</span>
+<span class="c1"># print(response)</span>
 </pre></div>
 </div>
 </div>
@@ -1279,38 +802,38 @@ response = compute_response(weights, ...)
 <p>You should get a response of 30.</p>
 </section>
 <section id="b-experimentation">
-<h2>B) Experimentation<a class="headerlink" href="#b-experimentation" title="Permalink to this headline">#</a></h2>
+<h2>B) Experimentation<a class="headerlink" href="#b-experimentation" title="Permalink to this heading">#</a></h2>
 <p>Let’s say that we’re recording the responses of the neuron while presenting various “images” (various pixel combinations that we represent with a vector). We are choosing these images so that our pixel vector is always a unit vector. For each random image, compute the response and the angle of that pixel vector with the vector of weights (hint: use <code class="docutils literal notranslate"><span class="pre">np.arccos</span></code>). We will then plot the neural response as a function of the angle (using a hidden function <code class="docutils literal notranslate"><span class="pre">plot_responses_vs_angles</span></code>).</p>
 <p>Note that the concept of an angle is hard to visualize here when we’re working in 4D space! It can be helpful to visualize as if in 2D</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>n_images = 100 # how many images we present
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_images</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># how many images we present</span>
 
-# Set up arrays for storing responses/angles
-responses = np.zeros((n_images,))
-angles = np.zeros((n_images))
-responses[:] = np.nan
-angles[:] = np.nan
+<span class="c1"># Set up arrays for storing responses/angles</span>
+<span class="n">responses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_images</span><span class="p">,))</span>
+<span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_images</span><span class="p">))</span>
+<span class="n">responses</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">angles</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
-# Loop through images
-for i_image in range(n_images):
+<span class="c1"># Loop through images</span>
+<span class="k">for</span> <span class="n">i_image</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_images</span><span class="p">):</span>
 
-  pixel_vector = generate_unit_vec()
+  <span class="n">pixel_vector</span> <span class="o">=</span> <span class="n">generate_unit_vec</span><span class="p">()</span>
 
-  ## Fill out below and uncomment
+  <span class="c1">## Fill out below and uncomment</span>
 
-  # Compute the response of the neuron (hint: use part A)
-  #responses[i_image] = ... 
+  <span class="c1"># Compute the response of the neuron (hint: use part A)</span>
+  <span class="c1">#responses[i_image] = ...</span>
 
-  # Compute the angle between pixel vector and the weight vector (hint: use dot product def again and np.arccos)
-  #angles[i_image] = ... 
+  <span class="c1"># Compute the angle between pixel vector and the weight vector (hint: use dot product def again and np.arccos)</span>
+  <span class="c1">#angles[i_image] = ...</span>
 
-plot_responses_vs_angles(responses, angles)
+<span class="n">plot_responses_vs_angles</span><span class="p">(</span><span class="n">responses</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Week1Tutorial1_29_0.png" src="../_images/Week1Tutorial1_29_0.png" />
+<img alt="../_images/c87ceb59328e8ac55051fabfa4dea8eda50f99486810316e5b2b25c735745bb9.png" src="../_images/c87ceb59328e8ac55051fabfa4dea8eda50f99486810316e5b2b25c735745bb9.png" />
 </div>
 </div>
 <p>From the resulting plot, what can you tell about how the image similarity to the weights (in terms of angle between weight and pixel vector) affects neural response?</p>
@@ -1318,88 +841,24 @@ plot_responses_vs_angles(responses, angles)
 <p><em>YOUR ANSWERS HERE</em></p>
 </section>
 <section id="c-computing-optimal-stimuli">
-<h2>C) Computing optimal stimuli<a class="headerlink" href="#c-computing-optimal-stimuli" title="Permalink to this headline">#</a></h2>
+<h2>C) Computing optimal stimuli<a class="headerlink" href="#c-computing-optimal-stimuli" title="Permalink to this heading">#</a></h2>
 <p>How could we compute the optimal stimulus for this neuron (i.e. the image that results in the largest neural response) given the constraint that it must be a unit vector?</p>
 <p>i) Write out a formula for the optimal stimulus</p>
 <p>ii) Compute the optimal stimulus below. Make sure the response to it is larger than any in the plot above</p>
 <p><em>i) YOUR ANSWERS HERE</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>optimal_stimulus = ...
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimal_stimulus</span> <span class="o">=</span> <span class="o">...</span>
 
-# Uncomment below once you have computed the optimal stimulus
-#max_response = compute_response(weights, optimal_stimulus)
-#print(max_response)
+<span class="c1"># Uncomment below once you have computed the optimal stimulus</span>
+<span class="c1">#max_response = compute_response(weights, optimal_stimulus)</span>
+<span class="c1">#print(max_response)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercise-4-correlation-coefficient">
-<h1>Exercise 4: Correlation coefficient<a class="headerlink" href="#exercise-4-correlation-coefficient" title="Permalink to this headline">#</a></h1>
-<p>Suppose we record from a population of 10,000 neurons and extract each neuron’s mean firing rate in condition A and condition B. To quantify population firing similarity between the two conditions, we might calculate the <strong>Pearson correlation coefficient</strong> of the firing rates in the two conditions.</p>
-<p>Let <span class="math notranslate nohighlight">\(\{a_i\}_{i=1}^{10000}\)</span> be the firing rates in condition A and <span class="math notranslate nohighlight">\(\{b_i\}_{i=1}^{10000}\)</span> be the firing rates in condition B. Then the Pearson correlation coefficient <span class="math notranslate nohighlight">\(\rho\)</span> between the firing rates in the two conditions is calculated as:</p>
-<div class="math notranslate nohighlight">
-\[ \rho = \frac{\sum_{i=1}^{10000}(a_i - \mu_a)(b_i - \mu_b)}{\sqrt{\sum_{i=1}^{10000}(a_i - \mu_a)^2}\sqrt{\sum_{i=1}^{10000}(b_i - \mu_b)^2}}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mu_a\)</span> and <span class="math notranslate nohighlight">\(\mu_b\)</span> are the mean firing rates of the population in the two conditions.</p>
-<p>For simplicity, let’s say <span class="math notranslate nohighlight">\(\{x_i\}_{i=1}^{10000}\)</span> are the firing rates in condition A with <span class="math notranslate nohighlight">\(\mu_a\)</span> already subtracted (<span class="math notranslate nohighlight">\(x_i = a_i-\mu_a\)</span>) and <span class="math notranslate nohighlight">\(\{y_i\}_{i=1}^{10000}\)</span> be the same for condition B (<span class="math notranslate nohighlight">\(y_i = b_i - \mu_b\)</span>).</p>
-<section id="a-derivation">
-<h2>A) Derivation<a class="headerlink" href="#a-derivation" title="Permalink to this headline">#</a></h2>
-<p>Show how <span class="math notranslate nohighlight">\(\rho\)</span> relates to the angle <span class="math notranslate nohighlight">\(\theta\)</span> between the two mean zero population firing vectors, <span class="math notranslate nohighlight">\(\bar{x}\)</span> and <span class="math notranslate nohighlight">\(\bar{y}\)</span>. You should end with an equation for <span class="math notranslate nohighlight">\(\rho\)</span> in terms of <span class="math notranslate nohighlight">\(\theta\)</span>. Hint: how can you transform the equation above to vectors and dot products?</p>
-<p><em>YOUR ANSWER HERE</em></p>
-</section>
-<section id="b-verification-with-code">
-<h2>B) Verification with code<a class="headerlink" href="#b-verification-with-code" title="Permalink to this headline">#</a></h2>
-<p>We will now compute the correlation coefficient of two firing rate vectors two ways: 1) using numpy’s built in <code class="docutils literal notranslate"><span class="pre">np.corrcoef</span></code> function (provided) and 2) using your formula from part A.  Make sure the computed correlation coefficients from the two methods match!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>## Method 1 (provided)
-
-np.random.seed(123)
-
-# Generate firing rate vectors (in Hz)
-a = np.random.randint(0, 100, size=(10000,))
-b = a+50*np.random.randn(10000,)
-
-# Compute Pearsons correlation coefficient
-p = np.corrcoef(a, b)[0, 1]
-print(&#39;Pearson correlation coefficient = &#39;+str(p))
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson correlation coefficient = 0.49406770864742755
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>## Method 2 (your turn)
-
-# Use your formula from Part A to compute the correlation coefficient
-# Hint: you&#39;ll need to compute the angle between vectors
-
-your_p = ...
-print(&#39;Pearson correlation coefficient = &#39;+str(your_p))
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson correlation coefficient = Ellipsis
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"ccdb8888fe474859bf985d0814019ec7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a5007ff91920443998746faa5167f674": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "e5554a081fa74b038381be9e1fe62347": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "a", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_ccdb8888fe474859bf985d0814019ec7", "max": 2.0, "min": -2.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_a5007ff91920443998746faa5167f674", "value": 1.0}}, "d3a01f24b75f49b58a302878fb5edfce": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6bf9ebdb44294292a2c3aa5b01225302": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "cad8a56bb126423ea5d75f52ff27bcb1": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "b", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_d3a01f24b75f49b58a302878fb5edfce", "max": 2.0, "min": -2.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_6bf9ebdb44294292a2c3aa5b01225302", "value": 1.0}}, "ab04ecb5180849cc8cff6bce73f302b7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d54c6da6d7514a818a567c205560081d": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_e5554a081fa74b038381be9e1fe62347", "IPY_MODEL_cad8a56bb126423ea5d75f52ff27bcb1", "IPY_MODEL_305021aa275a4fdd9814444458629b45"], "layout": "IPY_MODEL_ab04ecb5180849cc8cff6bce73f302b7"}}, "66f037bf340e4d3e8ce66de88be49b59": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "305021aa275a4fdd9814444458629b45": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_66f037bf340e4d3e8ce66de88be49b59", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<Figure size 1000x700 with 1 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAAA5sAAAIvCAYAAAD6R8/HAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8o6BhiAAAACXBIWXMAAA9hAAAPYQGoP6dpAABQx0lEQVR4nO3deXxU9aH///eZyTZkDyAKCSZqZRFU3EEs9aoVpbjjCioutLYitvfnrbdWm1preu2tJlTbr7hb7bVudamK2qpVsS6tIioComIIyJoZhiRkspzz+2OaYYaZJJPwmUxm5vV8PPJwzpkz8/7MEYnvOZ9zjuU4jiMAAAAAAAxyJXsAAAAAAID0Q9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QSQEI7jyO/3y3GcZA8FAAAASRB32VyzZo1s207kWCRJtm2TRRZZaZC1bds2FRcXa9u2bQnNSdf9RxZZmZYFAEg/HNkEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABhH2QQAAAAAGEfZBAAAAAAYR9kEAAAAABiXFe+Gtm3Ltu1EjiUihyyyyEqtrEAgoEAgEFr2+XwRmYmSLvuPLLIyPUuSXC6+AweAdBJ32fR6vbIsS5ZlJXI8chyHLLLISsGs2tpa1dXVRa1vaGiQ3+83mhUuXfYfWWRlepYkVVZWJjwDADBw4i6bpaWlqqioSPi3jrZty3EcssgiK8WyampqVF1dHVr2+XyqqqpSeXm5SkpKjGaFS5f9RxZZmZ4FAEg/cZdNl8sV+kk0ssgiK/WyPB6PPB5Pt3mJlA77jyyyyAIApBt+cwAAAAAAjKNsAgAAAACMo2wCAAAAAIyjbAIAAAAAjKNsAgAAAACMo2wCAAAAAIyjbAIAAAAAjKNsAgAAAACMo2wCAAAAAIyjbAIAAAAAjKNsAgAAAACMo2wCAAAAAIyjbAIAAAAAjKNsAgAAAACMo2wCAAAAAIyjbAIAAAAAjKNsAgAAAACMo2wCAAAAAIyjbAIAAAAAjKNsAgAAAACMo2wCAAAAAIyjbAIAAAAAjKNsAgAAAACMy4p3Q9u2Zdt2IscSkUMWWWSlVlYgEFAgEAgt+3y+iMxESZf9RxZZmZ4lSS4X34EDQDqJu2x6vV5ZliXLshI5HjmOQxZZZKVgVm1trerq6qLWNzQ0yO/3G80Kly77jyyyMj1LkiorKxOeAQAYOHGXzdLSUlVUVCT8W0fbtuU4DllkkZViWTU1Naqurg4t+3w+VVVVqby8XCUlJUazwqXL/iOLrEzPAgCkn7jLpsvlCv0kGllkkZV6WR6PRx6Pp9u8REqH/UcWWWQBANINvzkAAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxmXFu6Ft27JtO5FjicghiyyyUisrEAgoEAiEln0+X0RmoqTL/iOLrEzPkiSXi+/AASCdxF02vV6vLMuSZVmJHI8cxyGLLLJSMKu2tlZ1dXVR6xsaGuT3+41mhUuX/UcWWZmeJUmVlZUJzwAADJy4y2ZpaakqKioS/q2jbdtyHIcssshKsayamhpVV1eHln0+n6qqqlReXq6SkhKjWeHSZf+RRVamZwEA0k/cZdPlcoV+Eo0ssshKvSyPxyOPx9NtXiKlw/4jiyyyAADpht8cAAAAAADjKJsAAAAAAOMomwAAAAAA4yibAAAAAADjKJsAAAAAAOMomwAAAAAA4yibAAAAAADjKJsAAAAAAOMomwAAAAAA4yibAAAAAADjKJsAAAAAAOMomwAAAAAA4yibAAAAAADjKJsAAAAAAOMomwAAAAAA4yibAAAAAADjKJsAAAAAAOMomwAAAAAA4yibAAAAAADjKJsAAAAAAOMomwAAAAAA4yibAAAAAADjKJsAAAAAAOOy4t3Qtm3Ztp3IsUTkkEUWWamVFQgEFAgEQss+ny8iM1HSZf+RRVamZ0mSy8V34ACQTuIum16vV5ZlybKsRI5HjuOQRRZZKZhVW1ururq6qPUNDQ3y+/1Gs8Kly/4ji6xMz5KkysrKhGcAAAZO3GWztLRUFRUVCf/W0bZtOY5DFllkpVhWTU2NqqurQ8s+n09VVVUqLy9XSUmJ0axw6bL/yCIr07MAAOkn7rLpcrlCP4lGFllkpV6Wx+ORx+PpNi+R0mH/kUUWWQCAdMNvDgAAAACAcZRNAAAAAIBxlE0AAAAAgHGUTQAAAACAcZRNAAAAAIBxlE0AAAAAgHGUTQAAAACAcZRNAAAAAIBxlE0AAAAAgHGUTQAAAACAcZRNAAAAAIBxlE0AAAAAgHGUTQAAAACAcZRNAAAAAIBxlE0AAAAAgHGUTQAAAACAcZRNAAAAAIBxlE0AAAAAgHGUTQAAAACAcVnJHgAAAEC6sG1bHR0dsm072UMBACNcLpeysrLkcvX9OCVlEwAAYDfYtq2mpib5/X41NTXJcZxkDwkAjLIsSwUFBSoqKlJBQUHcxZOyCQAA0E+2bauhoUHNzc3Ky8vT8OHDlZeXJ5fLJcuykj08ANgtjuPItm21trbK7/dr3bp1ys/PV3l5eVyFk7IJAADQD11Fs6WlRaNHj1Z+fn6yhwQACZGfn6+hQ4equblZa9euVUNDQ1yFM+6yadv2gJx/0JVDFllkpVZWIBBQIBAILft8vojMREmX/UcWWZmeJalf5wMlU1NTk5qbmymaADJGfn6+KioqVF9fr6amJhUVFfW4fdxl0+v1yrKshE8JcRyHLLLISsGs2tpa1dXVRa1vaGiQ3+83mhUuXfYfWWRlepYkVVZWJjzDJL/fr7y8PIomgIySn5+vvLw8+f1+c2WztLRUFRUVCf/W0bZtOY5DFllkpVhWTU2NqqurQ8s+n09VVVUqLy9XSUmJ0axw6bL/yCIr07NSTddFgYYPH57soQDAgCsqKtLmzZtl23aPvx/iLpsulyv0k2hkkUVW6mV5PB55PJ5u8xIpHfYfWWSRlVo6OjrkOI7y8vKSPRQAGHB5eXlyHEcdHR3Kycnpdjt+cwAAAPRR13mslHAAmajr777ezunnb0gAAIB+4vYmADJRvH/3UTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGZSV7AAAAAMBAs23pfx6VvtgQ/dzkcdIlJ8Z+3edfB1/nOJHr3S7px2dLVXuaHyuQqjiyCQAAgIzjckmXTpdys6Of+8en0sdrote3d0j3vxRdNCXpO0dSNIFdUTYBAACQkfYokc6ZFvu5P/xNam2LXPf0P6QN3uht991LOvlw48MDUh5lEwAAABnrmAnSpH2j1zdulx57Y+fyF19LL78fvV1eTvAIqYv/qwai8J8FAAAAMtqc46Xi/Oj1b3wkrVj77+mzL0t2jOmz506ThhcnfoxAKqJsAgAAIKMVeqSLT4he70h68K/S429KXzdGP3/oN6SjD0j48ICUxdVoAQAABlCgvfvnXJaUnRXftpYl5SRgWynyojl92batI/bFc+LZNtaFegbShErp2IOkVz+MXL95m/TK0ujtSwqkOccNxMiA1EXZBAAAGEBX3tH9cxMrpatO27n8ozuDpSyW/UdJ18zauXztvVLTjtjb7j1C+ul5O5d/9qC0dXvsbfcqk268cOfyL/8v9lE9SRpaKP3q0p3LtzwmfbUx9rYFHum27+5crvuztGrdzuW7ro79uoF01jHBabPdfd4ulqS535by8wZkWEDKYhotAAAAoODR38umB++Z2ZPjJknjRw/MmIBUFveRTdu2Zdt2IscSkUMWWWSlVlYgEFAgEAgt+3y+iMxESZf9RxZZmZ4lSa4MuZzn7T/o/jmXFbl863djbycFp8aG+9Ul8W/78wtjbxfLdef1vk2X/5rV8zTacAtOj3/bgTR6D+mkw6W/vBP7+aFF0hlHD+yYgFQVd9n0er2yLEvWrn9bGeY4DllkkZWCWbW1taqrq4ta39DQIL/fbzQrXLrsP7LIyvQsSaqsrEx4xmDQl3MTU23bnD6coNWXbQdSpy198lX3z3u3S2s2St8YNXBjAlJV3P+Zl5aWqqKiIuHfOtq2LcdxyCKLrBTLqqmpUXV1dWjZ5/OpqqpK5eXlKikpMZoVLl32H1lkZXoWMFg894705Ybun7cd6d4XpZ/NDt5jE0D34i6bLpcr9JNoZJFFVupleTweeTyebvMSKR32H1lkkQUk3xdfS8+/1/t2W/zSH1+VLjkx8WMCUhm/OQAAAJDxAu3SPS8Gp9HuKtZVZ//xqfSvzxI/LiCVUTYBAACQ8R55Tdrki14/eZz03RnB253s6g9/k3xNCR4YkMIomwAAAMhoSz+X3vwken1JvnTuNGlchTTtwOjnm1ul+14anFfVBQYDyiYAAAAylr9ZevCvsZ+bc7w05N9TaM86RhpeHL3N8nrpb0sTNjwgpVE2AQAAkLHue1naviN6/ZTx0oFVO5dzs6WLT4g9nfbJN6X1WxM2RCBlUTYBAACQkV79UPp4TfT6kgLpnG9Gr9+/XDpuUvT69k7p7sVSR6fxIQIpjbIJAACAjPN1o/T4G7Gfu/C4ndNnd3X60dKI0uj1azdLT71lbnxAOoj7PpsAAABAutirTLrjyr6/LidLuuki8+MB0hFHNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBAAAAAMZRNgEAAAAAxlE2AQAAAADGUTYBIE5fffVVsocAAACQMrLi3dC2bdm2ncixROSQRRZZqZUVCAQUCARCyz6fLyIzURK9/1atWqXHH39cjz76qD766COdcMIJmjlzpn7wgx8kJK9Luvy5IIusvnC5+A4cANJJ3GXT6/XKsixZlpXI8chxHLLIIisFs2pra1VXVxe1vqGhQX6/32hWuER8pi+++ELPP/+8nnvuOa1YsSLiuZdfflnvvPOOpk2bpqKiIiN5saTLnwuyyOqLysrKhGcAAAZO3GWztLRUFRUVCf/W0bZtOY5DFllkpVhWTU2NqqurQ8s+n09VVVUqLy9XSUmJ0axwpj/TX/7yF5166qmhZbfbraysLHV2dsrtdquoqEibN2/WU089pZ/+9Ke7ndeddPlzQRZZAIDMFXfZdLlcoZ9EI4ssslIvy+PxyOPxdJuXSP39TCtXrtRjjz2m8vJyXXzxxZKkY489VoWFhZo6dapKS0v1yCOPqL29PTSN8IILLlBtba1uu+02LViwQMXFxaY/Tkg6/LkgiywAQObiNweAjLJy5UrddNNNOvDAAzV27Fhdf/31EdN/CwsL9cUXX6i4uFh//OMfI85XsyxLF198scaNGyefz6cnn3wyWR8DAABg0Iv7yCYApLJbb71V999/vz766KPQuqysLB1//PE6++yz5TiOLMvSqlWrdMopp+izzz6Leo+JEyequLhYCxcuVFZWlr71rW8N4CcAAABILZRNAGnp888/1z777BO6qMl7772njz76KKJgnnrqqSorKwu9Ztu2bZo0aZICgUDU1TezsrI0ffp0SdJ//Md/MKUQAACgF5RNAGmj6xzMxx57TMuWLdNHH32kCRMmSJKuvPJKffvb344qmOGys7O15557as2aNVHPdXR06Pjjj49av2XLFuXm5qqwsNDoZwEAAEh1fDUPIKWtXLlSv/3tbzVp0qTQOZjLli1TVlaW3n///dB2Rx99tObOndtt0ZSkIUOG6I033pDb7Y66zUNeXp6OOuqoiHV33HGHqqqqVFtba/QzAQAApAOObAJIWa+99pqOPfbY0HJPU2Tj9V//9V+h2z243W45jiPbtnXssccqNzc3Ytthw4apqalJt956q6666qqEXpkWAAAg1XBkE0BK6LqK7B133BFaN2XKFA0fPlzTpk3T3XffrY0bN+qFF17o9Qhmd5599lk9/PDD6uzslMvlUmlpqebPn6+8vDydf/75UdufddZZGj9+vHw+nxYuXLhbnw8AACDdcGQTwKC16zmYkrTPPvvo+9//vizLUk5OjtasWaNNmzZp9OjRu3XRnsbGRl1yySWyLCt0NPPee+/VzJkz9etf/1rZ2dlRFw1yu9264YYbdO6553J0EwAAYBeUTQCDzu2336677rorVDClnVNkZ82apc7OTmVlBf/6ysvLM5J51VVXyev1hqbPnnfeeZo5c6ak4IWDutN1dHP58uVauHChrr/+eiPjAQAASHVMowWQdKtWrYo4avjRRx+FLvIzffp03XPPPaEpspdcckmoaJqy6/TZsrKyuKfFdh3dlIL38ty2bZvRsQEAAKQqyiaApOg6B/Oggw7SmDFj9M4774Se++53vxtVMPtzDmY8wqfPSpJt27rnnntUWloa93t0Hd1sbm7WG2+8kZBxAgAApBqm0QIYMLHOwZSCU2Q//PBDTZ48WZJ0yCGH6JBDDhmQMfU0fTZebrdb9913n0aMGKG99947QSMFAJjU9MIn2nj1Y1Hrh3xzP+111+weXxv4eL0azlwUtT67skyjX7zK2BiBVEfZBDAg3nvvPR1xxBGh5fBzME877bSEHbnsSdf0WUl9nj67q/DPBgAY/PJPGCv3nkXq3OCPWN/y5udqX+9T9siSbl/b9PzHMdcXnnawwRECqY+yCcC4lStX6sEHH4xYd+ih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4r7PJgAAAHZffX29tmzZkuxhDDrDhg3T6NGjkz0MwKhNmzZp/fr1koL3LT7ooIOSPKKBRdkEAAAYIPX19RozZoxaW1uTPZRBJy8vTytXrqRwIq2EH9UcM2aMhgwZksTRDDym0QIAAAyQLVu2UDS70drayhFfpJ2lS5eGHk+aNCl5A0kSyiYAAACAjFBZWRm6WM9AyOTzNSXKJgAAAAAkRHjZ5MgmAAAAkCHWrFkTOsrV35/q6upkfwwjtm3bpscff1wLFizQtGnTNGrUKHk8HuXm5mrEiBE69thjdcstt2jr1q0xX9/Z2anJkyfH3EcXX3xxt7lvv/223G531Guys7P17rvvJujTDoympiatXr06tNxVNr/66iv97Gc/0yGHHKLS0lIVFBRo4sSJuu666+T1eqPe57HHHou5X08++eRex/Cvf/0r5mv3339/cx+0B5RNAAAAIIPdcMMNGj58uGbNmqWFCxfq9ddf1/r169Xa2qq2tjZt2rRJr732mn784x9r3LhxeuWVV6Lew+1266GHHlJBQUHUcw888IAWL14ctb61tVVz586Vbdsxx3TEEUeY+YBJsmzZstBnq6ysVHFxsf7nf/5H+++/v2688UZ98MEH8vl8am5u1scff6ybb75Z48aNizgaKkmnn366ysvLo97/xRdfVH19fY9j+NOf/hRz/UUXXdTPT9U3lE0AAAAggz3zzDNqb2+XJFmWpX333VdTpkzR8ccfr0MOOSTiCqqbN2/Wqaeeqi+//DLqffbdd1/V1tbGzJg3b562b98ese6GG27QihUroradMmWKfvKTn+zGJxocwkvjwQcfrIsuukjXXnut2traVFJSoiOPPFJTpkyJ2L8bN27USSedFHGxrKysLF1xxRVR72/btu65554ex/DYY49FrXO5XLrwwgv785H6jLIJAAAAZKj29nZt2LBBV1xxhZ5//nlt375dq1ev1pIlS/Tyyy/rX//6l7Zu3apFixaFjlo2NTXplltuifl+l156qU4//fSo9WvXrtU111wTWn7nnXd06623Rm1XWFiohx56SG6329AnTJ7wsvn3v/9dDz30kIYPH64//OEP2rRpk95++20tWbJEGzZs0GWXXRbaduPGjfr5z38e8V6XX365cnNzozLuvfdedXZ2xsx/9913tWbNmqj1xx13nCoqKvr5qfqG+2wCAAAgI5WWlqqmpqbX7RYtWhTzSJ4kHXTQQXHn3X///Zo7d27c28frvvvu6/G8yJ5YlqWvvvoqZpHpkpeXp8svv1z5+fm64IILJEkvv/xyt9svWrRIb7/9tr7++uuo9eecc46mTJmiuXPnxixJCxcuVFVVVb8+y2ATXja9Xq/23Xdfvf766xo5cmTEdoWFhbrrrru0fv16Pf/885KCU49vu+02ZWUF69rw4cN13nnn6f777494bUNDgxYvXqwZM2ZE5T/66KMxx5WIP4PdoWwCAAAgIxUXF+vaa6/tcZva2tpui+bNN98c8yheKsnKygoVmt6ccsopoccNDQ3dbjds2DDde++9OumkkyLWO46jyy67TDNmzNCnn34a9bqzzjqr36V5sOno6NAnn3wSWs7Ly9Ozzz4bVTTD3XDDDaGyuX37di1btizidinz58+PKptSsMTHKpuPP/541Lri4uIB/TNL2QQAAABi+NOf/qQf/ehHMZ+78sor9d///d99er9Ro0bpxBNPNDG0qPcdCC0tLaHHvRXU6dOn6wc/+IHuuOOOiPVffPGFfvvb30ZtP2rUKN15551mBjoILF++XIFAILT8ox/9SOPGjevxNUcccYSKiork9/slBa+WHF42DznkEB199NFasmRJxOuee+45rV+/PqLIvv322/rqq6+iMs4991zl5eX16zP1B2UTAAAA2MVrr72mCy+8UI7jRD131llnqa6urs/vecIJJ+iEE04wMTzjOjo6tGTJEv3zn//UypUr5fP51NTUFHGl2G3btoUejxgxotf3/PWvf61XXnkl5lHMcJZl6f7771dZWVm/x//yyy/rN7/5Ta/bbdy4MfR4+vTpvW7/n//5n/36dxY+hTYvLy/ifNXuWJal8vJyLV++XJJCpTPc/Pnzo8pmZ2en7rvvPl133XWhdd1dhXagjxxTNgEAAIAwH330kU477TS1tbVFPTdt2jQ99NBDcrnS4zqbLS0t+tWvfqVFixZFFLHefOMb3+h1G4/Ho4cfflhHHnlk6Gq3sVx99dU6/vjj486OZd26dXrxxRf79Jp4tj/33HP7NZ7wsnnGGWeopKSkz+/h8Xii1p155pkaNWqU1q1bF7H+7rvv1k9+8hNZliXHcWJOoR07dqyOOuqoPo9jd6THfyUAAACAAfX19TrppJMijuJ1mThxop5++ukeL6aTSj766CONHz9ev/jFL/pUNCVpwoQJcW03adKkHqcbV1ZWxnWRplSzdOnS0ON4jqB22bx5c+hxrPM7u7sNypo1a0IXbXrrrbdinlObjPNhKZsAAACAglcMnT59etRRI0kaPXq0Fi9erOLi4iSMzLzVq1frW9/6Vui8vpycHF1wwQV66KGHtHTpUm3dulWtra1yHCf0M2nSpNDrwx/3pKOjo8cjiGvXrtV77723ex9GwSIVPtbufvbee+/Qa+LZvj8FzXGciLIZ79HEr7/+OqJsjh07NuZ28+bNi/mFx1133SUp9lVo3W635syZE9c4TIp7Gq1t2xFzthOlK4cssshKraxAIBBxIrzP54vITJR02X9kkZXpWZLSZloiUlNra6tmzpwZ8/zCsrIyvfjiiz1eSTQe8Z5X2Ff9Oa9w3rx5amxslCQdcMABeuaZZ7TPPvt0u73f79eyZctCy/GWzZtuuknvvPNOt893dnbqwgsv1IcffqjCwsI4Rz+4ffnllxFHxsMLbk/+/ve/hx6PGTNGw4cPj7nd8OHDde655+qBBx6IWP/0009rw4YNMafQfvvb397tP7/9EXfZ9Hq9sixLlmUlcjxyHIcssshKwaza2tqYF0toaGiIeYK7Kemy/8giK9OzpOB0OiAZbNvWeeedF3XhFSl43txf/vKXbo8y9UV/ziuMR1/PK/zkk0/06quvSgp+yfPnP/+5x6IpBc9v7Lovpsfj0ZgxY3rNeeedd/TLX/6y1+2+/PLLbm/rkYrCz9ccMmSIcnJy4nrd//3f/4Uen3baaT1uO3/+/Kiy2d7ernnz5mn9+vVR2w/kvTXDxV02S0tLVVFRkfBvHW3bluM4ZJFFVopl1dTUqLq6OrTs8/lUVVWl8vLyfp0UH6902X9kkZXpWUAyXXnllXrqqaei1rvdbv3pT3/S5MmTB35QCfTXv/419Pioo46K62I/v//970OPDzzwQLnd7h63b25u1uzZs9XR0RH1XFlZWeioapcHHnhAM2fO1JlnntnrWAa78Cm0bW1tchyn1y/s6uvrQ/fYdLvduvzyy3vc/tBDD9WUKVP01ltvRax/9tlno7YtKyuLuEfqQIq7bLpcrtBPopFFFlmpl+XxeGJeNW0gPlc67D+yyCILSI5f/vKXEUUq3O9//3vNnDnTWNbFF1+clIu07Cr8nNRhw4b1uv2zzz4bOhIqSQcffHCvr1mwYIFWr14dtf7CCy/URRddpOOPPz7qtjLz5s3T5MmTkzLd06TwI5sdHR1avXp1r4X+xz/+caiYn3/++dp33317zZk/f35U2YzlvPPOS9pFrbj1CQAAADLSn//8Z/30pz+N+dyYMWO0detW/epXv+rxPaZOnaqpU6cmYngJE/7l0apVq3rc9vPPP4+agtnb+ZpPP/207rnnnqj1I0eOVF1dnUpKSnTFFVfod7/7XcTzjY2Nmjt3rhYvXjwgU/cTJbxsStIjjzyi66+/vtvt//jHP+qRRx6RFLwnZ3d/Jnd11lln6T//8z9jTpsNl8wvOCibAAAAyEgffvhht8+tXLmyx1t2dPnZz36WcmXzgAMOCD1esWKFHn30UZ199tlR27355puaNWuWtm7dGrG+p7K5cePGbqeALlq0KHRqzS233KLFixfriy++iNjmpZde0sKFC7VgwYJ4P86gsmnTpqjyd8stt+i0007TxIkTo7Z/8MEHNW/evNByXV2d9t9//7iyum6D0lORnTBhgg477LA4R28ec2IAAACADDJz5kwVFRWFls8//3x9//vf15NPPqnXXntN999/v0455RQdc8wx2rBhgy688MLQtm63O2Zp6jJ37tyI23d0ufjiizVjxozQcn5+vu67776YRzCvvfZaLV++vL8fL6nCz9fcb7/9NHXqVDU1NWnq1Kn6xS9+oSVLlujtt9/WAw88oOOOO04XXXRR6Gr+s2fPjiie8ejuNihdkj1tm7IJAAAAZJCSkhLV1taGljs7O/X73/9eZ555po499ljNnTtXzz77rFwul6699lqdc845oW3Hjh0b8xoNknTHHXfohRdeiFo/atQo3XbbbVHrv/nNb8Y8gtna2qoLLrhAbW1t/fh0yRU+hfbQQw/V3XffraFDh8rv9+uGG27Q1KlTNXnyZF188cV65ZVXQttefvnl/boa7x577BHx7ydcVlaWZs+e3ef3NImyCQAAAGSYuXPn6oEHHlBZWVnUc5ZlaerUqXr99ddVU1MTUaC6uzjQihUrdM0118R8Lnz67K5uvvnmmNNGly5dGve5i4PJrvtqzJgxeuutt3T44YfH3L7rHqeLFi3q9Qq/3fne974Xc/1JJ52kESNG9Os9TeGcTQAAgAEybNgw5eXlqbW1NdlDGXTy8vLiujKqSdXV1RG37co0F154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\n"}}]}}, "06ea1b9f8fbb42b497957f31f024fb6e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "52f2c673053d46c3bb453406e3ca4b10": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "2c687f396db3442a8c7cae569749a054": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "dot_prod", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_06ea1b9f8fbb42b497957f31f024fb6e", "max": 12.3, "min": -12.3, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_52f2c673053d46c3bb453406e3ca4b10", "value": 1.0}}, "56b3a303563f43d8a01e5201ef05a42c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e6917499eedd4fcfb75e86bc9bc654e2": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_2c687f396db3442a8c7cae569749a054", "IPY_MODEL_f9f325cafbf340f2a562670adaf1063d"], "layout": "IPY_MODEL_56b3a303563f43d8a01e5201ef05a42c"}}, "76c30dda28994b50ba4c3f7afafdd7c8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f9f325cafbf340f2a562670adaf1063d": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_76c30dda28994b50ba4c3f7afafdd7c8", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<Figure size 700x700 with 1 Axes>", "image/png": "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\n"}}]}}}, "version_major": 2, "version_minor": 0}
-</script>
-
 
     <script type="text/x-thebe-config">
     {
@@ -1413,7 +872,7 @@ print(&#39;Pearson correlation coefficient = &#39;+str(your_p))
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Week1"
         },
         predefinedOutput: true
@@ -1421,50 +880,125 @@ print(&#39;Pearson correlation coefficient = &#39;+str(your_p))
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Video13.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Video 1.3: Vector spaces</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Week1Tutorial2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial 2</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Ella Batty<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
 
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Video13.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Video 1.3: Vector spaces</p>
       </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-functions">Hidden functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-tips">Coding tips</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-vector-addition-scalar-multiplication">Exercise 1: Vector addition &amp; scalar multiplication</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-figuring-out-a-basis">Exercise 2: Figuring out a basis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-determing-dependence">Exercise 3: Determing dependence</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-linear-independence-vs-dependence">A) Linear independence vs dependence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-orthogonal-vectors">B) Orthogonal vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-span">C) Span</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-basis">D) Basis</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-dot-product-geometrical-properties">Exercise 2: Dot product geometrical properties</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-interactive-demo">A) Interactive demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-optional-proof-of-relationship">B) (Optional) Proof of relationship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-resulting-properties-of-the-dot-product">C) Resulting properties of the dot product</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-optimal-stimuli-for-a-neuron">Exercise 3: Optimal stimuli for a neuron</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-coding-the-neuron">A) Coding the neuron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-experimentation">B) Experimentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-computing-optimal-stimuli">C) Computing optimal stimuli</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ella Batty
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
