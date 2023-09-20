@@ -30,12 +30,12 @@ parts:
       - file: Week3/Video33.ipynb
       - file: Week3/Week3Tutorial1.ipynb
       - file: Week3/Week3Tutorial2.ipynb
-  #   - file: Week4/Overview.md
-  #     sections:
-  #     - file: Week4/KeyConcepts.md
-  #     - file: Week4/Video41.ipynb
-  #     - file: Week4/Video42.ipynb
-  #     - file: Week4/Video43.ipynb
+    - file: Week4/Overview.md
+      sections:
+      - file: Week4/KeyConcepts.md
+      - file: Week4/Video41.ipynb
+      - file: Week4/Video42.ipynb
+      - file: Week4/Video43.ipynb
   #     - file: Week4/Video44.ipynb
   #     - file: Week4/Week4Tutorial1.ipynb
   #     - file: Week4/Week4Tutorial2.ipynb
