@@ -54,7 +54,7 @@ parts:
       sections:
       - file: Week6/KeyConcepts.md
       - file: Week6/Reading61.md
-  #     - file: Week6/Week6Tutorial1.ipynb
+      - file: Week6/Week6Tutorial1.ipynb
   #   - file: Week7/Overview.md
   #     sections:
   #     - file: Week7/Video71.ipynb
