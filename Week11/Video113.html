@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Week 1: Vectors &#8212; Mathematical Tools for Neuroscientists</title>
+    <title>Video 11.3: K-Means Clustering &#8212; Mathematical Tools for Neuroscientists</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Week1/Overview';</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"431a2e0ad80b48b1b0783b2043673bde": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "4c314ff461774aef9dbe45501f00a436": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_431a2e0ad80b48b1b0783b2043673bde", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "<IPython.lib.display.YouTubeVideo at 0x7f7af8729550>", "text/html": "\n        <iframe\n            width=\"730\"\n            height=\"410\"\n            src=\"https://www.youtube.com/embed/CoVz598m7zc?fs=1\"\n            frameborder=\"0\"\n            allowfullscreen\n            \n        ></iframe>\n        ", "image/jpeg": "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"}}], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Week11/Video113';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Key concepts" href="KeyConcepts.html" />
-    <link rel="prev" title="Introduction" href="../intro.html" />
+    <link rel="prev" title="Video 11.2: Types of Clustering Algorithms" href="Video112.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,13 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra &amp; Dynamical Systems</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Week 1: Vectors</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="KeyConcepts.html">Key concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Video11.html">Video 1.1: What is a vector?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Video12.html">Video 1.2: Vector properties &amp; operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Video13.html">Video 1.3: Linear combinations, span, and basis vectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Week1Tutorial1.html">Tutorial 1</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Week1/Overview.html">Week 1: Vectors</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/KeyConcepts.html">Key concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Video11.html">Video 1.1: What is a vector?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Video12.html">Video 1.2: Vector properties &amp; operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Video13.html">Video 1.3: Linear combinations, span, and basis vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Week1/Week1Tutorial1.html">Tutorial 1</a></li>
 
 
 
@@ -288,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Week9/Overview.html">Week 9: Linear Regression</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Week9/Video91.html">Video 9.1: What is machine learning?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Week9/Video92.html">Video 9.2: Types of machine learning</a></li>
@@ -317,10 +319,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Week11/Overview.html">Week 11: Clustering &amp; Classification</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Week11/Video111.html">Video 11.1: Clustering Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Week11/Video112.html">Video 11.2: Types of Clustering Algorithms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Week11/Video113.html">Video 11.3: K-Means Clustering</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Overview.html">Week 11: Clustering &amp; Classification</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Video111.html">Video 11.1: Clustering Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Video112.html">Video 11.2: Types of Clustering Algorithms</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Video 11.3: K-Means Clustering</a></li>
 </ul>
 </li>
 </ul>
@@ -369,6 +371,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ebatty/MathTools2023/blob/jupyterbook/Week11/Video113.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -377,7 +428,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Week1/Overview.md" target="_blank"
+      <li><a href="../_sources/Week11/Video113.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -387,7 +438,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -446,7 +497,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -457,11 +510,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week 1: Vectors</h1>
+    <h1>Video 11.3: K-Means Clustering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -471,10 +533,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week-1-vectors">
-<h1>Week 1: Vectors<a class="headerlink" href="#week-1-vectors" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
+  <p><a href="https://colab.research.google.com/github/ebatty/MathToolsforNeuroscience/blob/jupyterbook/Week11/Video113.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="video-11-3-k-means-clustering">
+<h1>Video 11.3: K-Means Clustering<a class="headerlink" href="#video-11-3-k-means-clustering" title="Permalink to this heading">#</a></h1>
+<section id="video">
+<h2>Video<a class="headerlink" href="#video" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4c314ff461774aef9dbe45501f00a436"}</script></div>
 </div>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h2>
+<a href="https://osf.io/tsyvx/download">
+    Click here to download notes
+</a>
+<a class="bg-primary reference internal image-reference" href="https://github.com/ebatty/MathToolsforNeuroscience/blob/jupyterbook/Week11/video11_3_notes.png?raw=True"><img alt="notes for the video" class="bg-primary" src="https://github.com/ebatty/MathToolsforNeuroscience/blob/jupyterbook/Week11/video11_3_notes.png?raw=True" style="width: 100%;" /></a>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -490,7 +565,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Week1"
+            path: "./Week11"
         },
         predefinedOutput: true
     }
@@ -508,22 +583,13 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="Video112.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Video 11.2: Types of Clustering Algorithms</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="KeyConcepts.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Key concepts</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -531,6 +597,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
